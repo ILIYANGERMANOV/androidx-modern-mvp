@@ -1,4 +1,4 @@
-package com.iliyangermanov.modenmvp;
+package com.iliyangermanov.modernmvp;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.iliyangermanov.modenmvp.test", appContext.getPackageName());
+        assertEquals("com.iliyangermanov.modernmvp.test", appContext.getPackageName());
     }
 }

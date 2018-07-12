@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.iliyangermanov.modernmvp"
+        applicationId "com.iliyangermanov.mvpsample"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1

@@ -4,8 +4,8 @@ import android.content.Context
 import android.graphics.Paint
 import android.view.View
 import com.iliyangermanov.modernmvp.MVPActivity
-import com.iliyangermanov.modernmvp.R
 import com.iliyangermanov.sample.MainContract
+import com.iliyangermanov.sample.R
 import com.iliyangermanov.sample.model.MainModel
 import com.iliyangermanov.sample.presenter.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
