@@ -1,5 +1,5 @@
 package com.iliyangermanov.modernmvp
 
-public interface BasePresenter {
+interface BasePresenter {
     fun onDestroy()
 }
