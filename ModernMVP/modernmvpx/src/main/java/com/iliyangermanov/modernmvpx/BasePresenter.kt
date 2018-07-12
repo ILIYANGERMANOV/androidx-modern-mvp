@@ -1,4 +1,4 @@
-package com.iliyangermanov.modernmvp
+package com.iliyangermanov.modernmvpx
 
 interface BasePresenter {
     fun onDestroy()

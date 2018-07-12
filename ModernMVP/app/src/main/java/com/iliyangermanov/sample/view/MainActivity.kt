@@ -3,7 +3,7 @@ package com.iliyangermanov.sample.view
 import android.content.Context
 import android.graphics.Paint
 import android.view.View
-import com.iliyangermanov.modernmvp.MVPActivity
+import com.iliyangermanov.modernmvpx.MVPActivity
 import com.iliyangermanov.sample.MainContract
 import com.iliyangermanov.sample.R
 import com.iliyangermanov.sample.model.MainModel

@@ -1,6 +1,6 @@
 package com.iliyangermanov.sample.presenter
 
-import com.iliyangermanov.modernmvp.Presenter
+import com.iliyangermanov.modernmvpx.Presenter
 import com.iliyangermanov.sample.MainContract
 
 class MainPresenter(view: MainContract.View, val model: MainContract.Model) :

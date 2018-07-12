@@ -1,7 +1,7 @@
 package com.iliyangermanov.sample
 
-import com.iliyangermanov.modernmvp.BasePresenter
-import com.iliyangermanov.modernmvp.BaseView
+import com.iliyangermanov.modernmvpx.BasePresenter
+import com.iliyangermanov.modernmvpx.BaseView
 
 interface MainContract {
     interface Presenter : BasePresenter {

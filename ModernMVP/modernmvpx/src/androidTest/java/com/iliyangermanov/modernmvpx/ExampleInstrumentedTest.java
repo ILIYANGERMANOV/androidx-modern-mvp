@@ -1,4 +1,4 @@
-package com.iliyangermanov.modernmvp;
+package com.iliyangermanov.modernmvpx;
 
 import android.content.Context;
 

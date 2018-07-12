@@ -1,4 +1,4 @@
-package com.iliyangermanov.modernmvp;
+package com.iliyangermanov.modernmvpx;
 
 import org.junit.Test;
 
