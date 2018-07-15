@@ -16,10 +16,20 @@ abstract class MVPFragment<P : BasePresenter> : Fragment(), BaseView {
 
     protected lateinit var presenter: P
 
+    /**
+     * @return layout resource's id for the fragment's layout
+     * e.g. R.layout.fragment_main
+     */
     @LayoutRes
     protected abstract fun getLayout(): Int
 
-    protected abstract fun initPresenter(applicationContext: Context): P
+    /**
+     * Instantiate the presenter here. Called when activity is created (@see Fragment#onActivityCreated()).
+     * @param applicationContext application's context, use it if 'Model' needs it
+     * @param arguments arguments passed to the fragment
+     * @return new instance of the presenter
+     */
+    protected abstract fun initPresenter(applicationContext: Context, arguments: Bundle?): P
 
     @CallSuper
     override fun onCreateView(
@@ -33,7 +43,7 @@ abstract class MVPFragment<P : BasePresenter> : Fragment(), BaseView {
     @CallSuper
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        presenter = initPresenter(activity!!.applicationContext)
+        presenter = initPresenter(activity!!.applicationContext, arguments)
         onSetupUI()
         onSetupListeners()
     }
@@ -45,19 +55,24 @@ abstract class MVPFragment<P : BasePresenter> : Fragment(), BaseView {
     }
 
     /**
-     * Empty stub
+     * Empty method. Called once in onActivityCreated() after presenter in initialized.
+     * Setup programmatically UI here - RecyclerView, TextView, background colors and et.
+     * e.g. textView.paintFlags = textView.paintFlags or Paint.UNDERLINE_TEXT_FLAG
      */
     protected open fun onSetupUI() {
     }
 
     /**
-     * Empty stub
+     * Empty method. Called once immediately after @see MVPFragment#onSetupUI().
+     * Attach your UI listeners here, e.g. myButton.setOnClickListener {...}
      */
     protected open fun onSetupListeners() {
     }
 
     /**
-     * Empty stub
+     * Empty method. Called once in onStart() after presenter, UI and listeners are setup.
+     * Execute your business logic that initializes the screen here.
+     * E.g. presenter.start(); presenter.loadData(); presenter.initScreen() and etc
      */
     protected open fun onReady() {
     }

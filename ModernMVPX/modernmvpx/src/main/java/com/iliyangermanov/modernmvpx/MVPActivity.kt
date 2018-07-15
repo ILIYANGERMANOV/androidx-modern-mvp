@@ -25,8 +25,8 @@ abstract class MVPActivity<P : BasePresenter> : AppCompatActivity(), BaseView {
      * Instantiate the presenter here. Called immediately after content view is set
      * (@see AppCompatActivity#setContentView()).
      * @param applicationContext application's context, use it if 'Model' needs it
-     * @param intent the intent that started the activity, use it for extract extras
-     * and pass it to the presenter. E.g. val userId = intent.getStringExtra("user_id")
+     * @param intent the intent that started the activity, use it to extract EXTRAS
+     * and pass them to the presenter. E.g. val userId = intent.getStringExtra("user_id")
      * @return new instance of the presenter
      */
     abstract fun initPresenter(applicationContext: Context, intent: Intent): P

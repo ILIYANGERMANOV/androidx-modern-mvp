@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Modern MVP</string>
     <string name="err_fetch_data">Error while fetching data</string>
-    <string name="btn_fetch">Fetch greeting</string>
+    <string name="btn_fetch_greeting">Fetch greeting</string>
+    <string name="btn_fetch_user_details">Fetch user details</string>
+    <string name="btn_details">User details</string>
 </resources>

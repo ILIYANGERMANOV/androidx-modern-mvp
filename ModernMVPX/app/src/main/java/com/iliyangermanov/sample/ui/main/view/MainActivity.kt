@@ -1,4 +1,4 @@
-package com.iliyangermanov.sample.view
+package com.iliyangermanov.sample.ui.main.view
 
 import android.content.Context
 import android.content.Intent
@@ -6,19 +6,20 @@ import android.graphics.Paint
 import android.view.View
 import android.view.WindowManager
 import com.iliyangermanov.modernmvpx.MVPActivity
-import com.iliyangermanov.sample.MainContract
 import com.iliyangermanov.sample.R
-import com.iliyangermanov.sample.model.MainModel
-import com.iliyangermanov.sample.presenter.MainPresenter
+import com.iliyangermanov.sample.ui.details.view.DetailsActivity
+import com.iliyangermanov.sample.ui.main.MainContract
+import com.iliyangermanov.sample.ui.main.model.MainModel
+import com.iliyangermanov.sample.ui.main.presenter.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : MVPActivity<MainContract.Presenter>(), MainContract.View {
     override fun getContentLayout() = R.layout.activity_main
 
-
     override fun initPresenter(applicationContext: Context, intent: Intent): MainContract.Presenter {
         return MainPresenter(this, MainModel())
     }
+
 
     override fun onBeforeSetContentView() {
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
@@ -33,6 +34,9 @@ class MainActivity : MVPActivity<MainContract.Presenter>(), MainContract.View {
         btnFetch.setOnClickListener {
             presenter.showGreeting("Iliyan")
         }
+        btnDetails.setOnClickListener {
+            presenter.handleDetailsClick()
+        }
     }
 
     override fun onReady() {
@@ -45,7 +49,7 @@ class MainActivity : MVPActivity<MainContract.Presenter>(), MainContract.View {
         tvGreeting.visibility = View.INVISIBLE
     }
 
-    override fun showGreeting(greeting: String) {
+    override fun displayGreeting(greeting: String) {
         hideLoading()
         tvGreeting.text = greeting
     }
@@ -59,5 +63,10 @@ class MainActivity : MVPActivity<MainContract.Presenter>(), MainContract.View {
         btnFetch.isEnabled = true
         pbLoading.visibility = View.INVISIBLE
         tvGreeting.visibility = View.VISIBLE
+    }
+
+    override fun openDetailsScreen() {
+        val intent = DetailsActivity.getIntent(this)
+        startActivity(intent)
     }
 }

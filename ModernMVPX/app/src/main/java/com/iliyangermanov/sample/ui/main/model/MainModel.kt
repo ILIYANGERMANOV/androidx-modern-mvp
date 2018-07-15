@@ -1,8 +1,8 @@
-package com.iliyangermanov.sample.model
+package com.iliyangermanov.sample.ui.main.model
 
 import android.os.Handler
 import com.iliyangermanov.modernmvpx.DataCallback
-import com.iliyangermanov.sample.MainContract
+import com.iliyangermanov.sample.ui.main.MainContract
 
 class MainModel : MainContract.Model {
     override fun fetchGreeting(name: String, callback: DataCallback<String>) {
