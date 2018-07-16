@@ -25,4 +25,8 @@ class MainPresenter(view: MainContract.View, val model: MainContract.Model) :
         view?.openDetailsScreen()
     }
 
+    override fun handleWeatherClick() {
+        view?.openWeatherScreen()
+    }
+
 }

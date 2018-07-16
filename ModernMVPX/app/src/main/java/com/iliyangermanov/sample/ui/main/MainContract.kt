@@ -9,6 +9,8 @@ interface MainContract {
         fun showGreeting(name: String)
 
         fun handleDetailsClick()
+
+        fun handleWeatherClick()
     }
 
     interface View : BaseView {
@@ -19,6 +21,8 @@ interface MainContract {
         fun showError()
 
         fun openDetailsScreen()
+
+        fun openWeatherScreen()
     }
 
     interface Model {

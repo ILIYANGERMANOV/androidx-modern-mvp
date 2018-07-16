@@ -21,6 +21,9 @@
         <activity
             android:name=".ui.details.view.DetailsActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.weather.view.WeatherActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

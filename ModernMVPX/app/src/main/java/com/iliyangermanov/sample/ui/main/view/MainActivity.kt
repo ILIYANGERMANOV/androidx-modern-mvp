@@ -11,9 +11,11 @@ import com.iliyangermanov.sample.ui.details.view.DetailsActivity
 import com.iliyangermanov.sample.ui.main.MainContract
 import com.iliyangermanov.sample.ui.main.model.MainModel
 import com.iliyangermanov.sample.ui.main.presenter.MainPresenter
+import com.iliyangermanov.sample.ui.weather.view.WeatherActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : MVPActivity<MainContract.Presenter>(), MainContract.View {
+
     override fun getContentLayout() = R.layout.activity_main
 
     override fun initPresenter(applicationContext: Context, intent: Intent): MainContract.Presenter {
@@ -36,6 +38,9 @@ class MainActivity : MVPActivity<MainContract.Presenter>(), MainContract.View {
         }
         btnDetails.setOnClickListener {
             presenter.handleDetailsClick()
+        }
+        btnWeather.setOnClickListener {
+            presenter.handleWeatherClick()
         }
     }
 
@@ -67,6 +72,11 @@ class MainActivity : MVPActivity<MainContract.Presenter>(), MainContract.View {
 
     override fun openDetailsScreen() {
         val intent = DetailsActivity.getIntent(this)
+        startActivity(intent)
+    }
+
+    override fun openWeatherScreen() {
+        val intent = Intent(this, WeatherActivity::class.java)
         startActivity(intent)
     }
 }
