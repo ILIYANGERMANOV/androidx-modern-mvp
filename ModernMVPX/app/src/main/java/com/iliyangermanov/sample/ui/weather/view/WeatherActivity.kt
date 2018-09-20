@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.activity_weather.*
 class WeatherActivity : MVPActivity<WeatherContract.Presenter>(), WeatherContract.View {
     override fun getContentLayout() = R.layout.activity_weather
 
-    override fun initPresenter(applicationContext: Context, intent: Intent): WeatherContract.Presenter {
-        return WeatherPresenter(this, WeatherModel(applicationContext))
+    override fun initPresenter(appContext: Context, intent: Intent): WeatherContract.Presenter {
+        return WeatherPresenter(this, WeatherModel(appContext))
     }
 
     override fun onSetupListeners() {

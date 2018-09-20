@@ -18,7 +18,7 @@ class MainActivity : MVPActivity<MainContract.Presenter>(), MainContract.View {
 
     override fun getContentLayout() = R.layout.activity_main
 
-    override fun initPresenter(applicationContext: Context, intent: Intent): MainContract.Presenter {
+    override fun initPresenter(appContext: Context, intent: Intent): MainContract.Presenter {
         return MainPresenter(this, MainModel())
     }
 

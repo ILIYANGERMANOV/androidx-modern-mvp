@@ -25,11 +25,11 @@ abstract class MVPFragment<P : BasePresenter> : Fragment(), BaseView {
 
     /**
      * Instantiate the presenter here. Called when activity is created (@see Fragment#onActivityCreated()).
-     * @param applicationContext application's context, use it if 'Model' needs it
-     * @param arguments arguments passed to the fragment
+     * @param appContext application's context, use it if 'Model' needs it
+     * @param args arguments passed to the fragment
      * @return new instance of the presenter
      */
-    protected abstract fun initPresenter(applicationContext: Context, arguments: Bundle?): P
+    protected abstract fun initPresenter(appContext: Context, args: Bundle?): P
 
     @CallSuper
     override fun onCreateView(

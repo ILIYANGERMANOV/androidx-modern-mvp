@@ -25,10 +25,10 @@ class DetailsFragment : MVPFragment<DetailsContract.Presenter>(), DetailsContrac
 
     override fun getLayout() = R.layout.fragment_details
 
-    override fun initPresenter(applicationContext: Context, arguments: Bundle?): DetailsContract.Presenter {
-        val userId = arguments?.getString(ARG_USER_ID)
+    override fun initPresenter(appContext: Context, args: Bundle?): DetailsContract.Presenter {
+        val userId = args?.getString(ARG_USER_ID)
                 ?: throw IllegalArgumentException("'$ARG_USER_ID' cannot be null")
-        return DetailsPresenter(this, DetailsModel(applicationContext), userId)
+        return DetailsPresenter(this, DetailsModel(appContext), userId)
     }
 
     override fun onSetupListeners() {
