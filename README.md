@@ -177,7 +177,7 @@ The goal of ModernMVP is to cutoff the bullshit and let you focus on the real wo
 
 You can always extend the standard lifecycle callbacks `onResume()`, `onPause()` and etc. if needed.<br>
 ModernMVP just provides you with a zero to none boiler plate for 90% of the common cases.
-> NOTE: The most cool part is that **View** is lifecycle aware and you just make `view?.someMethod()` calls without thinking whether it is in right state in the moment!
+> NOTE: The most cool part is that **View** is lifecycle aware and you just make `view?.someMethod()` calls without thinking whether it is in the right state at the moment!
 
 ## Try it out!
 Your feedback will be highly appreciated! I accept pull requests:) If you find any bugs don't hesitate to raise a issue. If you need any features just send me a feature request. And have a nice, concise and SOLID Android Development!
