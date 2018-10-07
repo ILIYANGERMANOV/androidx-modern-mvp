@@ -41,11 +41,6 @@ abstract class MVPActivity<P : BasePresenter> : AppCompatActivity(), BaseView {
         onSetupUI()
         onSetupListeners()
         UIActive = true
-    }
-
-    @CallSuper
-    override fun onStart() {
-        super.onStart()
         onReady()
     }
 
@@ -64,6 +59,7 @@ abstract class MVPActivity<P : BasePresenter> : AppCompatActivity(), BaseView {
      * Empty method. Called once in onCreate() after presenter in initialized.
      * Setup programmatically UI here - RecyclerView, TextView, background colors and et.
      * e.g. textView.paintFlags = textView.paintFlags or Paint.UNDERLINE_TEXT_FLAG
+     * !NOTE: In 99% of cases is considered mistake to use presenter here!
      */
     protected open fun onSetupUI() {
     }
@@ -76,7 +72,7 @@ abstract class MVPActivity<P : BasePresenter> : AppCompatActivity(), BaseView {
     }
 
     /**
-     * Empty method. Called once in onStart() after presenter, UI and listeners are setup.
+     * Empty method. Called once in onCreate() after presenter, UI and listeners are setup.
      * Execute your business logic that initializes the screen here.
      * E.g. presenter.start(); presenter.loadData(); presenter.initScreen() and etc
      */
