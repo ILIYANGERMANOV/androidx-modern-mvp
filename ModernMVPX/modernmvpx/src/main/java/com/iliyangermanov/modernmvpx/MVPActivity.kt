@@ -3,6 +3,7 @@ package com.iliyangermanov.modernmvpx
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -88,5 +89,9 @@ abstract class MVPActivity<P : BasePresenter> : AppCompatActivity(), BaseView {
         super.onDestroy()
         UIActive = false
         presenter.onDestroy()
+    }
+
+    override fun showToast(msg: String, length: Int) {
+        Toast.makeText(this, msg, length).show()
     }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
@@ -82,5 +83,9 @@ abstract class MVPFragment<P : BasePresenter> : Fragment(), BaseView {
     override fun onDestroyView() {
         super.onDestroyView()
         presenter.onDestroy()
+    }
+
+    override fun showToast(msg: String, length: Int) {
+        Toast.makeText(context, msg, length).show()
     }
 }
